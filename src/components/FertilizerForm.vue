@@ -409,19 +409,16 @@ export default {
       this.loading = true;
 
       try {
-        const response = await fetch("https://fertilizer-recommendation-ay9m.onrender.com", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${localStorage.getItem("token")}`
-          },
-          body: JSON.stringify({
-            crop: this.crop,
-            N: this.n,
-            P: this.p,
-            K: this.k
-          })
-        });
+        const response = await fetch("https://fertilizer-recommendation-ay9m.onrender.com/predict", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    crop: this.crop,
+    N: this.n,
+    P: this.p,
+    K: this.k
+  })
+});
 
         if (!response.ok) throw new Error("Network response was not ok");
 
