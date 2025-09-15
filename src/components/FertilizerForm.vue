@@ -409,7 +409,7 @@ export default {
       this.loading = true;
 
       try {
-        const response = await fetch("https://fertilizer-recommendation-ay9m.onrender.com/predict", {
+        const response = await fetch("https://fertilizer-recommendation-ay9m.onrender.com/recommend", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
