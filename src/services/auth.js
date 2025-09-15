@@ -53,3 +53,16 @@ export const isAuthenticated = () => {
     return false;
   }
 };
+
+// New function to get current username from token
+export const getCurrentUser = () => {
+  const token = getToken();
+  if (!token) return null;
+
+  try {
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    return payload.username || null;
+  } catch (error) {
+    return null;
+  }
+};

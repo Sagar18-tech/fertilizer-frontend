@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/recommendations"; // replace with your backend URL
+const API_URL = "https://fertilizer-recommendation-ay9m.onrender.com"; // replace with your backend URL
 
 export const getFertilizerRecommendation = async (data) => {
   try {

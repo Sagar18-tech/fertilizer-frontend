@@ -12,6 +12,9 @@
             <p class="subtitle">AI-powered recommendations for optimal crop nutrition</p>
           </div>
         </div>
+        <div class="user-info">
+          <span>Welcome, {{ username }}</span>
+        </div>
         <button @click="logout" class="logout-btn">
           <i class="fas fa-sign-out-alt"></i>
           <span>Logout</span>
@@ -312,7 +315,7 @@
 </template>
 
 <script>
-import { logout } from "../services/auth.js";
+import { logout, getCurrentUser } from "../services/auth.js";
 
 export default {
   name: "FertilizerForm",
@@ -355,6 +358,9 @@ export default {
     };
   },
   computed: {
+    username() {
+      return getCurrentUser();
+    },
     canProceed() {
       switch (this.currentStep) {
         case 1:
@@ -403,7 +409,7 @@ export default {
       this.loading = true;
 
       try {
-        const response = await fetch("http://localhost:5000/predict", {
+        const response = await fetch("https://fertilizer-recommendation-ay9m.onrender.com", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -491,6 +497,13 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.user-info {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 20px;
 }
 
 .logo-section {
@@ -1194,6 +1207,11 @@ export default {
   .header-content {
     flex-direction: column;
     gap: 20px;
+  }
+
+  .user-info {
+    margin: 0;
+    text-align: center;
   }
 
   .title-section h1 {
