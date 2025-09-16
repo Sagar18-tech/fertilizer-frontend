@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://fertilizer-recommendation-ay9m.onrender.com";
 
 export const login = async (username, password) => {
   try {
