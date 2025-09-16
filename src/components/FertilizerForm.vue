@@ -1200,81 +1200,218 @@ export default {
 }
 
 /* Responsive Design */
+
+/* Large screens (desktops) */
+@media (min-width: 1200px) {
+  .main-content {
+    max-width: 1200px;
+  }
+
+  .form-card {
+    padding: 3rem;
+  }
+
+  .crop-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .nutrient-group {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .title-section h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Medium screens (tablets landscape) */
+@media (max-width: 1024px) {
+  .crop-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nutrient-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .analysis-summary {
+    gap: 1.5rem;
+  }
+}
+
+/* Small screens (tablets portrait and small laptops) */
 @media (max-width: 768px) {
   .header-content {
     flex-direction: column;
-    gap: 20px;
+    gap: 1.25rem;
+    text-align: center;
   }
 
   .user-info {
     margin: 0;
-    text-align: center;
   }
 
   .title-section h1 {
-    font-size: 24px;
+    font-size: 1.5rem;
+  }
+
+  .logo {
+    width: 3.75rem;
+    height: 3.75rem;
+  }
+
+  .logo i {
+    font-size: 1.75rem;
   }
 
   .form-card {
-    padding: 25px 20px;
+    padding: 1.5625rem 1.25rem;
+    margin: 0 1rem;
   }
 
   .progress-bar {
     flex-direction: column;
-    gap: 10px;
+    gap: 0.625rem;
   }
 
   .progress-line {
-    width: 3px;
-    height: 40px;
+    width: 0.1875rem;
+    height: 2.5rem;
+  }
+
+  .step-title {
+    font-size: 1.25rem;
   }
 
   .crop-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .crop-card {
+    padding: 1rem;
+  }
+
+  .crop-icon {
+    font-size: 1.5rem;
   }
 
   .nutrient-group {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .nutrient-card {
+    padding: 1.25rem;
   }
 
   .analysis-summary {
     flex-direction: column;
-    gap: 15px;
+    gap: 0.9375rem;
   }
 
   .form-navigation {
     flex-direction: column;
+    gap: 0.625rem;
   }
 
   .nav-btn {
     width: 100%;
+    min-height: 2.75rem;
+    padding: 0.875rem 1.5rem;
   }
 
   .result-actions {
     flex-direction: column;
+    gap: 0.625rem;
   }
 
   .action-btn {
     width: 100%;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .main-content {
-    padding: 20px 10px;
+    min-height: 2.75rem;
+    padding: 0.75rem 1.25rem;
   }
 
-  .step-title {
-    font-size: 20px;
-  }
-
-  .nutrient-card {
-    padding: 20px;
+  .recommendation-box {
+    padding: 1.25rem;
   }
 
   .fertilizer-name {
-    font-size: 24px;
+    font-size: 1.5rem;
+  }
+}
+
+/* Extra small screens (phones) */
+@media (max-width: 480px) {
+  .main-content {
+    padding: 1.25rem 0.625rem;
+  }
+
+  .header-section {
+    padding: 1.25rem 0;
+  }
+
+  .form-card {
+    padding: 1.25rem 1rem;
+    margin: 0 0.5rem;
+  }
+
+  .step-title {
+    font-size: 1.125rem;
+  }
+
+  .step-description {
+    font-size: 0.875rem;
+  }
+
+  .crop-card {
+    padding: 0.875rem;
+  }
+
+  .crop-name {
+    font-size: 1rem;
+  }
+
+  .crop-desc {
+    font-size: 0.8125rem;
+  }
+
+  .nutrient-card {
+    padding: 1rem;
+  }
+
+  .nutrient-info h4 {
+    font-size: 1rem;
+  }
+
+  .nutrient-info p {
+    font-size: 0.8125rem;
+  }
+
+  .nav-btn {
+    font-size: 0.875rem;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .action-btn {
+    font-size: 0.8125rem;
+  }
+
+  .result-title {
+    font-size: 1.25rem;
+  }
+
+  .recommendation-box h4 {
+    font-size: 1rem;
+  }
+
+  .fertilizer-name {
+    font-size: 1.25rem;
+  }
+
+  .ready-message {
+    padding: 1rem;
+    font-size: 0.875rem;
   }
 }
 </style>
